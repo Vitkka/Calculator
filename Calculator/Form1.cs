@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -25,15 +18,22 @@ namespace Calculator
         string input = "0";
         public void SQRT(string input)
         {
+            input = textBox1.Text;
             double value;
+
             Double.TryParse(input, out value);
-            Math.Sqrt(value);
-            textBox1.Text = value.ToString();
+            double result = Math.Sqrt(value);
+            textBox1.Text = result.ToString();
+            
         }
 
         public void POW(string input)
         {
-
+            input = textBox1.Text;
+            double value;
+            Double.TryParse(input, out value);
+            double result = Math.Pow(value, 2);
+            textBox1.Text = result.ToString(); 
         }
 
 
@@ -163,6 +163,11 @@ namespace Calculator
         private void button19_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
